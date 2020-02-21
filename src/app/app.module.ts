@@ -10,13 +10,13 @@ import { ReadersModule } from './readers/readers.module';
 
 import { ShellComponent } from './shell/shell/shell.component';
 import { RouterModule } from '@angular/router';
+import { AddBookComponent } from './books/add-book/add-book.component';
+import { AddReaderComponent } from './readers/add-reader/add-reader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
-    ShellComponent,
-
+    ShellComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,8 @@ import { RouterModule } from '@angular/router';
     ReadersModule,
     RouterModule.forRoot([
       {path:"index", component: ShellComponent},
-      {path:"add-book", component: ShellComponent},
+      {path:"add-book", component: AddBookComponent},
+      {path:"add-reader", component: AddReaderComponent},
       {path:'', redirectTo: 'index', pathMatch:'full'}
     ])
 
