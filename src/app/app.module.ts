@@ -5,15 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllBooksComponent } from './books/all-books/all-books.component';
 import { BooksModule } from './books/books.module';
+import { AllReadersComponent } from './readers/all-readers/all-readers.component';
+import { ReadersModule } from './readers/readers.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BooksModule
+    BooksModule,
+    ReadersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
