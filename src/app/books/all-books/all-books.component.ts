@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IBooks } from 'src/app/models/books';
+import { IBook } from 'src/app/models/book';
 
 @Component({
   selector: 'app-all-books',
@@ -8,7 +8,7 @@ import { IBooks } from 'src/app/models/books';
 })
 export class AllBooksComponent implements OnInit {
 
-  books : IBooks[] = [
+  books : IBook[] = [
     {
       title: "Lord of the Rings",
       pages: 546,
