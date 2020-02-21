@@ -1,4 +1,12 @@
 
-<div><app-all-books></app-all-books>
-    <app-all-readers></app-all-readers>
+<div>
+    <nav class='container-fluid'>
+      <a class='navbar-brand'>{{pageTitle}}</a>
+      <ul class='nav navbar-nav'>
+        <li><a [routerLink] = "['/index']" >Home</a></li>
+        <li><a [routerLink] = "['/add-book']" >Book</a></li>
+      </ul>
+    </nav>
+
+<router-outlet></router-outlet>
 </div>
