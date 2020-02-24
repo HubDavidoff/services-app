@@ -3,5 +3,6 @@ export interface IBook{
     pages: number,
     description: string,
     author: string,
-    genres: string[]
+    genres: string[],
+    status: string
 }

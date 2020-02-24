@@ -1,33 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { IBook } from 'src/app/models/book';
+import { BookService } from 'src/app/services/bookService/book.service';
+import { BadgeService } from 'src/app/services/badgeService/badge.service';
 
 @Component({
   selector: 'app-all-books',
   templateUrl: './all-books.component.html',
-  styleUrls: ['./all-books.component.css']
+  providers: [BadgeService]
 })
-export class AllBooksComponent implements OnInit {
+export class AllBooksComponent implements OnInit, OnChanges {
 
-  books : IBook[] = [
-    {
-      title: "Lord of the Rings",
-      pages: 546,
-      description: "The precious",
-      author: "Rowling",
-      genres: ["Adventure", "Mistery"]
-    },
-    {
-      title: "The Hunger Games",
-      pages: 354,
-      description: "The precious",
-      author: "Rowling",
-      genres: ["Adventure", "Mistery"]
-    }
-  ];
+  books : IBook[];
+  status : string;
 
-  constructor() { }
+  constructor(private context: BookService, private badge : BadgeService) { }
 
   ngOnInit() {
+    this.books = this.context.bookData;
+    this.books.forEach(element => {element.status = this.badge.getBookSellerStatus(element.title);
+    });
   }
+
+  ngOnChanges() {
+    this.books = this.context.bookData;
+  }
+  
 
 }

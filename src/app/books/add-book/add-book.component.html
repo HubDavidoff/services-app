@@ -1,1 +1,25 @@
-<p>add-book works!</p>
+<div class="panel panel-primary" style="width: 650px; margin: 40px;">
+    <div class="panel-heading">
+        Add Book
+    </div>
+
+    <div class="panel-body">
+        <form #myform="ngForm" (ngSubmit)="create(myform)" class="form form-register">
+            <table>
+                <tbody>
+                    <tr class="row">
+                        <label class="col-md-4 control-label" for="productNameId">Book Title:</label>
+                        <input class="col-md-8" name="title" ngModel required>
+                    </tr>
+                    <tr class="row">
+                        <label class="col-md-4 control-label" for="productNameId">Author:</label>
+                        <input class="col-md-8" name="author" ngModel required>
+                    </tr>
+                    <tr> 
+                        <button type="submit" class="btn ok-btn"  value="create">Add</button>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllBooksComponent } from './all-books/all-books.component';
 import { AddBookComponent } from './add-book/add-book.component';
-
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +10,8 @@ import { AddBookComponent } from './add-book/add-book.component';
     AddBookComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:[
     AllBooksComponent

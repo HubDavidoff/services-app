@@ -3,6 +3,8 @@
         All Books
     </div>
     <div *ngFor='let book of books' style="margin: 10px;">
-        • {{book.title}}
+        <div *ngIf="book.title">
+        • {{book.title}}, {{book.status}}
+        </div>
     </div>
 </div>
