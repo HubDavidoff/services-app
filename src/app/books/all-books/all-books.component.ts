@@ -8,22 +8,34 @@ import { BadgeService } from 'src/app/services/badgeService/badge.service';
   templateUrl: './all-books.component.html',
   providers: [BadgeService]
 })
-export class AllBooksComponent implements OnInit, OnChanges {
+export class AllBooksComponent implements OnInit {
 
   books : IBook[];
-  status : string;
+  errorMessage : string;
 
   constructor(private context: BookService, private badge : BadgeService) { }
 
   ngOnInit() {
-    this.books = this.context.bookData;
-    this.books.forEach(element => {element.status = this.badge.getBookSellerStatus(element.title);
-    });
+    this.getBooks(); 
+    this.getPages();
   }
 
-  ngOnChanges() {
-    this.books = this.context.bookData;
+  getPages(){
+    this.context.getSomething(50)
+    .then(
+      data=>console.log("number of pages are greater than 400 <", data.toString()),
+      reason=>console.log("Error: ", reason)
+    )
   }
+
+  getBooks(){
+    this.context.getBooks().subscribe(books=>{this.books = books},
+      error=>this.errorMessage = <any>error);
+  }
+
+  // ngOnChanges() {
+  //   // this.books = this.context.bookData;
+  // }
   
 
 }

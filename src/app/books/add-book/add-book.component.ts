@@ -16,8 +16,8 @@ export class AddBookComponent implements OnInit {
   }
 
   create(form){
-    this.context.bookData.push({title: form.value.title, pages: 254, description: "Some description", author: form.value.author, genres: ["Action", "Adventure"]});
-    this.router.navigate(['/index']);
+    // this.context.bookData.push({title: form.value.title, pages: 254, description: "Some description", author: form.value.author, genres: ["Action", "Adventure"], status: ""});
+    // this.router.navigate(['/index']);
   }
 
 //   create(form) {

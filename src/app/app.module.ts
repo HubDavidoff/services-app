@@ -10,6 +10,7 @@ import { ShellComponent } from './shell/shell/shell.component';
 import { RouterModule } from '@angular/router';
 import { AddBookComponent } from './books/add-book/add-book.component';
 import { AddReaderComponent } from './readers/add-reader/add-reader.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AddReaderComponent } from './readers/add-reader/add-reader.component';
     BrowserModule,
     AppRoutingModule,
     BooksModule,
-
+    HttpClientModule,
     ReadersModule,
     RouterModule.forRoot([
       {path:"index", component: ShellComponent},

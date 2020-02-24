@@ -2,9 +2,11 @@
     <div class='panel-heading'>
         All Books
     </div>
-    <div *ngFor='let book of books' style="margin: 10px;">
-        <div *ngIf="book.title">
-        • {{book.title}}, {{book.status}}
+    <div *ngIf='books'>
+        <div *ngFor='let book of books' style="margin: 10px;">
+            <div *ngIf="book.title">
+            • {{book.title}}, {{book.status}}
+            </div>
         </div>
     </div>
 </div>
