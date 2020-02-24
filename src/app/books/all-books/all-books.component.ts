@@ -17,15 +17,25 @@ export class AllBooksComponent implements OnInit {
 
   ngOnInit() {
     this.getBooks(); 
-    this.getPages();
+    this.getPagesAsync(3500);
   }
 
-  getPages(){
-    this.context.getSomething(50)
-    .then(
-      data=>console.log("number of pages are greater than 400 <", data.toString()),
-      reason=>console.log("Error: ", reason)
-    )
+  // getPages(){
+  //   this.context.getSomething(500)
+  //   .then( 
+  //     data=>console.log(data),
+  //     reason=>console.log("Error: ", reason)
+  //   )
+  // }
+
+  private async getPagesAsync(pages:number): Promise<void>{
+    try{
+      let pagesNo : string = await this.context.getSomething(pages);
+      console.log(pages)
+    }
+    catch(error){
+      console.log(error)
+    }
   }
 
   getBooks(){
