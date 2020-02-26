@@ -15,23 +15,24 @@ export class BookService {
 
   // bookData : IBook [] = [];
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) {}
 
   getBooks() : Observable<IBook[]>{
-    return this.http.get<IBook[]>("http://localhost:3000/get-books/")
+    return this.http.get<IBook[]>("http://localhost:3000/books/")
     .pipe(catchError(this.handleError));
   }
 
   getSomething(pages: number) : Promise<string>{
     return new Promise((resolve, reject) =>{
-      if(pages > 400)
+      if(pages > 400){
         resolve(pages.toString());
+      }
       else
         reject("Promise got rejected");
       }
     );
   }
-  
+
   private handleError(err : HttpErrorResponse){
     console.log(err.message);  
     return Observable.throw(err.message);

@@ -8,14 +8,17 @@ import { ReadersModule } from './readers/readers.module';
 
 import { ShellComponent } from './shell/shell/shell.component';
 import { RouterModule } from '@angular/router';
-import { AddBookComponent } from './books/add-book/add-book.component';
+import { AddBookComponent } from './books/book-manager/add-book.component';
 import { AddReaderComponent } from './readers/add-reader/add-reader.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { EditbookComponent } from './books/book-manager/editbook.component';
+import { DeleteBookComponent } from './books/book-manager/delete-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent
+    ShellComponent,
+    EditbookComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       {path:"index", component: ShellComponent},
       {path:"add-book", component: AddBookComponent},
       {path:"add-reader", component: AddReaderComponent},
+      {path:"edit-book/:id", component: EditbookComponent},
+      {path:"delete-book/:id", component: DeleteBookComponent},
       {path:'', redirectTo: 'index', pathMatch:'full'}
     ])
 

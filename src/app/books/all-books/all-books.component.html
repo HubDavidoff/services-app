@@ -1,11 +1,11 @@
-<div class='panel panel-primary' style="width: 300px; margin-left: 50px;margin-top: 30px;">
+<div class='panel panel-primary' style="width: 360px; margin-left: 50px;margin-top: 30px;">
     <div class='panel-heading'>
         All Books
     </div>
     <div *ngIf='books'>
         <div *ngFor='let book of books' style="margin: 10px;">
             <div *ngIf="book.title">
-            • {{book.title}}, {{book.status}}
+            • {{book.title}} <a (click)='editClicked(book)'>Edit </a> <a href="#" (click)='deleteClicked(book)'>Delete</a>
             </div>
         </div>
     </div>
