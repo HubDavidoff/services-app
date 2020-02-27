@@ -13,6 +13,8 @@ import { AddReaderComponent } from './readers/reader-manager/add-reader.componen
 import { HttpClientModule } from '@angular/common/http';
 import { EditbookComponent } from './books/book-manager/editbook.component';
 import { DeleteBookComponent } from './books/book-manager/delete-book.component';
+import { EditReaderComponent } from './readers/reader-manager/edit-reader.component';
+import { DeleteReaderComponent } from './readers/reader-manager/delete-reader.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,11 @@ import { DeleteBookComponent } from './books/book-manager/delete-book.component'
     RouterModule.forRoot([
       {path:"index", component: ShellComponent},
       {path:"add-book", component: AddBookComponent},
-      {path:"add-reader", component: AddReaderComponent},
       {path:"edit-book/:id", component: EditbookComponent},
       {path:"delete-book/:id", component: DeleteBookComponent},
+      {path:"add-reader", component: AddReaderComponent},
+      {path:"edit-reader/:id", component: EditReaderComponent},
+      {path:"delete-reader/:id", component:DeleteReaderComponent},
       {path:'', redirectTo: 'index', pathMatch:'full'}
     ])
 

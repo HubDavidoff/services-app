@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { IBook } from 'src/app/models/book';
-import { BookService } from 'src/app/services/bookService/book.service';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-delete-book',

@@ -3,7 +3,9 @@
         All Readers
     </div>
     <div *ngFor='let reader of readers' style="margin: 10px;">
-        • {{reader.name}}
+        • {{reader.name }}
+        <a (click)='editClicked(reader)'>Edit </a> 
+        <a (click)='deleteClicked(reader)'>Delete</a>
     </div>
 
 </div>

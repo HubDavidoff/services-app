@@ -1,13 +1,13 @@
 <div class="panel panel-primary" style="width: 650px; margin: 40px;">
     <div class="panel-heading">
-        Edit Book
+        Edit Reader
     </div>
 
     <div class="panel-body">
         <table>
             <tbody *ngIf="book">
                 <tr class="row">
-                    <label class="col-md-4 control-label" for="productNameId">Book Author:</label>
+                    <label class="col-md-4 control-label" for="productNameId">Reader Name:</label>
                     <input class="col-md-8" name="author" [(ngModel)]='author' ngModel required placeholder={{book.author}}>
                 </tr>
                 <tr> 

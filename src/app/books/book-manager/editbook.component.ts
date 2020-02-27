@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BookService } from 'src/app/services/bookService/book.service';
+import { BookService } from 'src/app/services/book.service';
 import { IBook } from 'src/app/models/book';
 import { ActivatedRoute, Router } from '@angular/router';
 
