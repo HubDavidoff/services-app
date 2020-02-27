@@ -5,10 +5,10 @@
 
     <div class="panel-body">
         <table>
-            <tbody *ngIf="book">
+            <tbody>
                 <tr class="row">
-                    <label class="col-md-4 control-label" for="productNameId">Reader Name:</label>
-                    <input class="col-md-8" name="author" [(ngModel)]='author' ngModel required placeholder={{book.author}}>
+                    <label class="col-md-4 control-label">Reader Name:</label>
+                    <input class="col-md-8" name="rName" [(ngModel)]='name' ngModel required placeholder="{{reader.name}}" >
                 </tr>
                 <tr> 
                     <button class="btn btn-ok"  (click)='submit()'>Edit</button>
