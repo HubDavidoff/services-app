@@ -29,12 +29,12 @@ export class ReaderService {
   }
 
   editReader(reader : IReader): Observable<string>{
-    return this.http.post<string>(this.serverUrl + "edit-reader", reader)
+    return this.http.post<string>(this.serverUrl + "edit-reader", {reader: reader})
     .pipe(catchError(this.errorHandler));
   }
 
-  removeReader(reader : IReader) : Observable<string>{
-    return this.http.post<string>(this.serverUrl + "delete-reader", reader.id)
+  removeReader(id : string) : Observable<string>{
+    return this.http.post<string>(this.serverUrl + "delete-reader", {reader: id})
     .pipe(catchError(this.errorHandler));
   }
 
