@@ -9,7 +9,7 @@ import { ReadersModule } from './readers/readers.module';
 import { ShellComponent } from './shell/shell/shell.component';
 import { RouterModule } from '@angular/router';
 import { AddBookComponent } from './books/book-manager/add-book.component';
-import { AddReaderComponent } from './readers/add-reader/add-reader.component';
+import { AddReaderComponent } from './readers/reader-manager/add-reader.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditbookComponent } from './books/book-manager/editbook.component';
 import { DeleteBookComponent } from './books/book-manager/delete-book.component';
@@ -17,8 +17,7 @@ import { DeleteBookComponent } from './books/book-manager/delete-book.component'
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent,
-    EditbookComponent
+    ShellComponent
   ],
   imports: [
     BrowserModule,

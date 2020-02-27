@@ -10,7 +10,9 @@ import { RouterModule, Router } from '@angular/router';
 export class AllBooksComponent implements OnInit {
 
   books : IBook[];
+  book : IBook;
   errorMessage : string;
+  title : string = "";
 
   constructor(private context: BookService, private router : Router) { }
 
@@ -18,16 +20,6 @@ export class AllBooksComponent implements OnInit {
     this.getBooks(); 
     // this.getPagesAsync(3500);
   }
-
-  // private async getPagesAsync(pages:number): Promise<void>{
-  //   try{
-  //     let pagesNo : string = await this.context.getSomething(pages);
-  //     console.log(pages)
-  //   }
-  //   catch(error){       
-  //     console.log(error)
-  //   }
-  // }
 
   getBooks(){
     this.context.getBooks().subscribe(books=>{this.books = books},
@@ -44,9 +36,6 @@ export class AllBooksComponent implements OnInit {
     this.router.navigate([`/delete-book/${id}`]);
   }
 
-  
-  
-
   // getPages(){
   //   this.context.getSomething(500)
   //   .then( 
@@ -57,5 +46,15 @@ export class AllBooksComponent implements OnInit {
 
   // ngOnChanges() {
   //   // this.books = this.context.bookData;
+  // }
+  
+  // private async getPagesAsync(pages:number): Promise<void>{
+  //   try{
+  //     let pagesNo : string = await this.context.getSomething(pages);
+  //     console.log(pages)
+  //   }
+  //   catch(error){       
+  //     console.log(error)
+  //   }
   // }
 }

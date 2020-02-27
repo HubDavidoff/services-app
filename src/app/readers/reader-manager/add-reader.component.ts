@@ -14,9 +14,9 @@ export class AddReaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  create(form){
-    this.context.readerData.push({name: form.value.name, books: []});
-    this.router.navigate(['/index']);
-  }
+  // create(form){q
+  //   this.context.readerData.push({name: form.value.name, books: []});
+  //   this.router.navigate(['/index']);
+  // }
 
 }

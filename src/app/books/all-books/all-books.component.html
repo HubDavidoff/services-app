@@ -2,10 +2,12 @@
     <div class='panel-heading'>
         All Books
     </div>
-    <div *ngIf='books'>
+    <div>
         <div *ngFor='let book of books' style="margin: 10px;">
-            <div *ngIf="book.title">
-            • {{book.title}} <a (click)='editClicked(book)'>Edit </a> <a href="#" (click)='deleteClicked(book)'>Delete</a>
+            <div>
+            • {{book.title}}, {{book.author}} 
+            <a (click)='editClicked(book)'>Edit </a> 
+            <a (click)='deleteClicked(book)'>Delete</a>
             </div>
         </div>
     </div>

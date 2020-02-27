@@ -1,21 +1,20 @@
 <div class="panel panel-primary" style="width: 650px; margin: 40px;">
     <div class="panel-heading">
-        Add Book
+        Edit Book
     </div>
 
     <div class="panel-body">
-        <form (ngSubmit)="edit(myform)" class="form form-register">
-            <table>
-                <tbody>
-                    <tr class="row">
-                        <label class="col-md-4 control-label" for="productNameId">Book Title:</label>
-                        <input class="col-md-8" name="title" ngModel required>
-                    </tr>
-                    <tr> 
-                        <button type="submit" class="btn btn-ok"  value="create">Edit</button>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
+        <table>
+            <tbody *ngIf="book">
+                <tr class="row">
+                    <label class="col-md-4 control-label" for="productNameId">Book Title:</label>
+                    <input class="col-md-8" name="author" [(ngModel)]='author' ngModel required placeholder={{book.author}}>
+                </tr>
+                <tr> 
+                    <button class="btn btn-ok"  (click)='submit()'>Edit</button>
+                    <button class="btn btn-danger" (click)='cancel()'>Cancel</button>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

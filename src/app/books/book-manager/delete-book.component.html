@@ -1,1 +1,19 @@
-<p>delete-book works!</p>
+<div class="panel panel-primary" style="width: 650px; margin: 40px;">
+    <div class="panel-heading">
+        Delete Book
+    </div>
+
+    <div class="panel-body">
+        <table>
+            <tbody>
+                <tr class="row">
+                    <label class="col-md-12 control-label" for="productNameId">Do you want to delete {{bookForDeletion}} book?</label>
+                </tr>
+                <tr> 
+                    <button class="col-md-4, btn btn-ok" (click)='confirm()' >Yes</button>
+                    <button class="col-md-4, btn btn-danger" (click)='cancel()' >No</button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
