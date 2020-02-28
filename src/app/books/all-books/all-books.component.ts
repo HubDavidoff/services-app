@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { IBook } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-all-books',
@@ -14,10 +14,10 @@ export class AllBooksComponent implements OnInit {
   errorMessage : string;
   title : string = "";
 
-  constructor(private context: BookService, private router : Router) { }
+  constructor(private context: BookService, private router : Router, private route : ActivatedRoute) { }
 
   ngOnInit() {
-    this.getBooks(); 
+    this.books = this.route.snapshot.data['resolvedBooks'];
     // this.getPagesAsync(3500);
   }
 

@@ -3,7 +3,8 @@ import { IBook } from 'src/app/models/book';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { resolve } from 'url';
+import { BookTrackerError } from '../models/bookTrackerError';
+import { stringify } from 'querystring';
 
 
 @Injectable({
@@ -36,8 +37,8 @@ export class BookService {
     .pipe(catchError(this.handleError));
   }
 
-  editBook(bookToEdit : IBook) : Observable<void>{
-    return this.http.post<void>(this.serverUrl + "/books/edit", {book: bookToEdit})
+  editBook(bookToEdit : IBook) : Observable<string>{
+    return this.http.post<string>(this.serverUrl + "/books/edit", {book: bookToEdit})
     .pipe(catchError(this.handleError));
   }
 
@@ -47,7 +48,8 @@ export class BookService {
   }
 
   private handleError(err : HttpErrorResponse){
-    console.log(err.message + "handleError Method :)");  
+    let errorData = err.message + ". Hueston, we have a problem"
+    console.log(errorData)
     return Observable.throw(err.message);
   } 
 

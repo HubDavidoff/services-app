@@ -33,8 +33,8 @@ export class ReaderService {
     .pipe(catchError(this.errorHandler));
   }
 
-  removeReader(id : string) : Observable<string>{
-    return this.http.post<string>(this.serverUrl + "delete-reader", {reader: id})
+  removeReader(id : string) : Observable<{success: string}>{
+    return this.http.post<{success: string}>(this.serverUrl + "delete-reader", {reader: id})
     .pipe(catchError(this.errorHandler));
   }
 
@@ -42,15 +42,5 @@ export class ReaderService {
     console.log(err.message)
     return Observable.throw(err.message);
   }
-  
-  // readerData : IReader[]  = [
-  //   {
-  //     name: 'Katniss',
-  //     books: []
-  //   },
-  //   {
-  //     name: 'Frodo',
-  //     books:[]
-  //   }
-  // ]
+
 }
