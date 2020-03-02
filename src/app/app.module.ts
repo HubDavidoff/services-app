@@ -10,12 +10,16 @@ import { ShellComponent } from './shell/shell/shell.component';
 import { RouterModule } from '@angular/router';
 import { AddBookComponent } from './books/book-manager/add-book.component';
 import { AddReaderComponent } from './readers/reader-manager/add-reader.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EditbookComponent } from './books/book-manager/editbook.component';
 import { DeleteBookComponent } from './books/book-manager/delete-book.component';
 import { EditReaderComponent } from './readers/reader-manager/edit-reader.component';
 import { DeleteReaderComponent } from './readers/reader-manager/delete-reader.component';
 import { BookResolverService } from './services/book-resolver.service';
+import { AddHeaderInterceptor } from './services/add-header.interceptor';
+import { ResponseInterceptor } from './services/response.interceptor';
+import { CacheInterceptor } from './services/cache.interceptor';
+import { HttpCacheService } from './services/http-cache.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { BookResolverService } from './services/book-resolver.service';
     ])
 
   ],
-  providers: [BookResolverService],
+  providers: [BookResolverService,
+  {provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true},
+  {provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true},
+  {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
+  HttpCacheService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
