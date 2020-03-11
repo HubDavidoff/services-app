@@ -20,11 +20,15 @@ import { AddHeaderInterceptor } from './services/add-header.interceptor';
 import { ResponseInterceptor } from './services/response.interceptor';
 import { CacheInterceptor } from './services/cache.interceptor';
 import { HttpCacheService } from './services/http-cache.service';
+import { BookService } from './services/book.service';
+import { ReaderService } from './services/reader.service';
+import { MostPopularBookComponent } from './books/book-manager/most-popular-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent
+    ShellComponent,
+    MostPopularBookComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,11 @@ import { HttpCacheService } from './services/http-cache.service';
     ])
 
   ],
-  providers: [BookResolverService,
+  providers: [
+  BookResolverService,
+  HttpCacheService,
+  BookService,
+  ReaderService,
   {provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true},
   {provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true},
   {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},

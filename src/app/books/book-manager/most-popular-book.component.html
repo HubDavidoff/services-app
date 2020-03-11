@@ -1,0 +1,12 @@
+<div class='panel panel-primary' style="width: 360px; margin-left: 50px;margin-top: 30px;">
+    <div class='panel-heading'>
+        Most Popular Book
+    </div>
+    <div>
+        <div style="margin: 10px;">
+            <div *ngIf='book.status'>
+            • {{book.title}}, {{book.author}} 
+            </div>
+        </div>
+    </div>
+</div>

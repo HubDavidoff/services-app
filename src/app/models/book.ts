@@ -4,5 +4,5 @@ export interface IBook{
     description: string,
     author: string,
     genres: string[],
-    status: string
+    status: boolean
 }

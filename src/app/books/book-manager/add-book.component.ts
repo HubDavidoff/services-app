@@ -19,7 +19,7 @@ export class AddBookComponent implements OnInit {
   }
 
   create(form){
-    this.newBook = {title: form.value.title, pages: 254, description: "Some description", author: form.value.author, genres: ["Action", "Adventure"], status: ""};
+    this.newBook = {title: form.value.title, pages: 254, description: "Some description", author: form.value.author, genres: ["Action", "Adventure"], status: false};
     this.context.addBook(this.newBook)
     .subscribe(response=>this.response = response);
     this.router.navigate(['/index']);

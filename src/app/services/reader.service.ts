@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ReaderService {
 
   serverUrl : string = "http://localhost:3000/readers/"

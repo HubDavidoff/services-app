@@ -7,15 +7,12 @@ import { BookTrackerError } from '../models/bookTrackerError';
 import { stringify } from 'querystring';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BookService {
 
   favoriteBook : string;
   serverUrl : string = "http://localhost:3000";
-  // postUrl : string = "http://localhost:3000/books/add";
-  // bookData : IBook [] = [];
+  mostPopular : IBook;
 
   constructor(private http : HttpClient) {}
 

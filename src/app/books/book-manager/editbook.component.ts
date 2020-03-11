@@ -37,11 +37,18 @@ export class EditbookComponent implements OnInit {
   cancel(){
     this.router.navigate(['index']);
   }
+
   submit(){
     this.book.author = this.bookAuthor;
     this.context.editBook(this.book)
     .subscribe(data=>console.log(data + "testing edit"),
     error=>this.errorMessage = <any>error);
+    this.router.navigate(['index']);
+  }
+
+  setPopular(){
+    this.book.status = true;
+    this.context.mostPopular = this.book;
     this.router.navigate(['index']);
   }
 }
